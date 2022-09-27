@@ -2,7 +2,7 @@ import React from 'react'
 
 export const MainComponent = () => {
   return (
-    <div>
+    <div class ="">
         <div class="jumbotron jumbotron-fluid ">
             <br/><br/>
             <div class="row align-items-center">

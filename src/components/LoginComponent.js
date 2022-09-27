@@ -20,12 +20,9 @@ export const LoginComponent = () => {
 
                         <form action="/users/signin" class="row g-3" method="POST">
 
-                            <div class="form-group mb-4">
+                            <div class="form-group mb-4 text-start">
                                 <label for="email" class="form-label">Correo Electronico</label>
                                 <input type="email" class="form-control" name="email" required/>
-                            </div>
-
-                            <div class="form-group mb-4">
                                 <label for="password" class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" name="password" required/>
                             </div>

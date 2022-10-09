@@ -20,12 +20,12 @@ export const FooterComponent = () => {
         <div class="container text-center text-md-start">
             <div class="row text-center text-md-start">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-monospace text-warning">SnapTrash</h6>
+                <h6 class="text-uppercase mb-4 font-monospace text-info">SnapTrash</h6>
                 <p>Descripción</p>
             </div>
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-monospace text-warning">Menú</h6>
+                <h6 class="text-uppercase mb-4 font-monospace text-info">Menú</h6>
                 <p>
                 <a href="/" class="text-white">Inicio</a>
                 </p>
@@ -43,7 +43,7 @@ export const FooterComponent = () => {
                 </p>
             </div>
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-monospace text-warning">Contacto</h6>
+                <h6 class="text-uppercase mb-4 font-monospace text-info">Contacto</h6>
                 <p>snaptrash@dominio.com</p>
                 <p>Teléfono: 265 98 32</p>
                 <p>Celular: 300 702 46 70</p>
@@ -56,7 +56,7 @@ export const FooterComponent = () => {
             <div class="col-md-8 col-lg-8">
                 <p>Copyright 2021 © All rights reserved by:</p>
                 <br/>
-                <a href="/"><strong class="text-warning">SnapTrash</strong></a>
+                <a href="/"><strong class="text-info">SnapTrash</strong></a>
             </div>
             </div>
         </div>

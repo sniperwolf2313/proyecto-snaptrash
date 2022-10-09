@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.jumbotron{
+  background: #1A2980;
+  background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
+  background: linear-gradient(to right, #26D0CE, #1A2980);
+}

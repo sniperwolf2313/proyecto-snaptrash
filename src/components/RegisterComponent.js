@@ -13,7 +13,7 @@ export const RegisterComponent = () => {
                             <h2 class="fw-bold text-center py-5">Registro Nuevo Usuario</h2>
                         </div>
                         <form action="/users/signup" class="row g-3" method="POST">
-                            <div class="form-group mb-4">
+                            <div class="form-group mb-4 text-start">
                                 <label for="nombre" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" name="nombre" required/>
                                 <label for="apellido" class="form-label">Apellido</label>

@@ -3,6 +3,7 @@ import React from 'react'
 export const SolicitudComponent = () => {
   return (
     <div>
+        <br/>
         <div class="col-md-10 mx-auto">
             <div class="card">
                 <div class="card-header">

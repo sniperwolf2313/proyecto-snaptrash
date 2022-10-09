@@ -2,33 +2,46 @@ import React from 'react'
 
 export const MainComponent = () => {
   return (
-    <div>
-        <div class="jumbotron jumbotron-fluid ">
+    <div class ="flex">
+        <div class="container-expand-lg">
+        <div class="jumbotron jumbotron-fluid">
             <br/><br/>
             <div class="row align-items-center">
                 <div class="col">
                     <img src='/img/logo.png' alt='' width={350}></img>
                 </div>
                 <div class="col text-start">
-                    <h1 class="display-1">SnapTrash</h1>
+                    <h1 class="display-1"><strong>SnapTrash</strong> </h1>
                     <br/>
                     <a class="btn btn-primary btn-lg" href="/" role="button">Generar Reporte</a>
                 </div>
             </div>
             <br/>
         </div>
-        <br/> <br/> <br/>
+        </div>
+        <div class="row">
+            <div class="col text-start">
+                <p>
+                    lorem
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!</p>
 
-        <div class="container">
-            <div class="jumbotron jumbotron-fluid p-2 text-center">
+                </p>
+            </div>
+            <div class="col text-end">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!</p>
+            </div>
+        </div>
+        <br/>
+
+        <div class="container-expand-lg">
+            <div class="jumbotron jumbotron-fluid p-1 text-center">
                 <div class="container">
                     <h2 class="display-6">Equipo</h2>
                 </div>
             </div>
         </div>
         <br/>
-
-        <div id ="equipo" class="container text-start">
+        <div class="container text-start">
             <div class="row">
                 <div class="col">
                     <div class="card">
@@ -89,19 +102,16 @@ export const MainComponent = () => {
         </div>
         <br/> <br/>
 
-        <div id="contacto" class="container">
-
-            <div class="container">
-                <div class="jumbotron jumbotron-fluid p-3 text-center">
-                    <div class="container">
-                        <h1 class="display-6">Contacto</h1>
-                    </div>
+        <div class="container-expand-lg">
+            <div class="jumbotron jumbotron-fluid p-1 text-center">
+                <div class="container">
+                    <h1 class="display-6">Contacto</h1>
                 </div>
             </div>
-        <br/>
-            <div class="container contact text-start">
+            <br/>
+            <div class="container contact text-start rounded shadow">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 align-self-center">
                         <div class="contact-info text-center">
                             <img src="/img/logo.png" width="50px" alt=""/>
                             <h2>Contactanos</h2>

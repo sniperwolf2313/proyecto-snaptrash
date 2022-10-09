@@ -16,7 +16,6 @@ function App() {
         <MainComponent/>
         <LoginComponent/>
         <RegisterComponent/>
-        <br/>
         <SolicitudComponent/>
       </body>
       <br></br>

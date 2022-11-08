@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import * as tf from '@tensorflow/tfjs';
 
 export const MainComponent = () => {
+    const modelo = async () => await tf.loadLayersModel('/modelo/model.json')
+
+    //modelo()
+
   return (
     <div class ="">
         <div class="jumbotron jumbotron-fluid ">

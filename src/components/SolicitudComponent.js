@@ -1,6 +1,26 @@
 import React from 'react'
 
 export const SolicitudComponent = () => {
+    const getLocation = () => {
+        function success(position) {
+            const latitude  = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            console.log('Latitud: '+latitude+'Longitude :'+longitude);
+            alert('Latitud: '+latitude+'Longitude :'+longitude);
+        }
+
+        function error() {
+            alert('Unable to retrieve your location');
+        }
+
+        if (!navigator.geolocation) {
+            alert('Geolocation is not supported by your browser');
+        } else {
+            navigator.geolocation.getCurrentPosition(success, error);
+        }
+    }
+
   return (
     <div>
         <div class="col-md-10 mx-auto">
@@ -12,7 +32,7 @@ export const SolicitudComponent = () => {
                     <form class="was-validated" action="" method="POST">
                         <div class="mb-3 row">
                             <div class="col-3">
-                                <button class="btn btn-outline-secondary">Obtener ubicación</button>
+                                <button class="btn btn-outline-secondary" onClick={getLocation}>Obtener ubicación</button>
                             </div>
                             <div class="col">
                             <input class="form-control" disabled placeholder='Dirección'></input>

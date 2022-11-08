@@ -1,3 +1,5 @@
+import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+
 import './App.css';
 import { LoginComponent } from './components/LoginComponent';
 import { RegisterComponent } from './components/RegisterComponent';
@@ -10,15 +12,16 @@ function App() {
   return (
     <div className="App">
       <header>
-        <NavBarComponent/>
+        <Router>
+          <NavBarComponent/>
+          <Routes>
+            <Route exact path='/' element={<MainComponent/>}></Route>
+            <Route exact path='/reporte' element={<SolicitudComponent/>}></Route>
+            <Route exact path='/login' element={<LoginComponent/>}></Route>
+            <Route exact path='/register' element={<RegisterComponent/>}></Route>
+          </Routes>
+        </Router>
       </header>
-      <body>
-        <MainComponent/>
-        <LoginComponent/>
-        <RegisterComponent/>
-        <br/>
-        <SolicitudComponent/>
-      </body>
       <br></br>
       <footer>
         <FooterComponent/>

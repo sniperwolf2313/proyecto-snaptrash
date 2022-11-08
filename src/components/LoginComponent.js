@@ -1,5 +1,4 @@
 import React from 'react'
-import { RegisterComponent } from './RegisterComponent'
 
 export const LoginComponent = () => {
     return (

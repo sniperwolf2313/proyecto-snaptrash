@@ -9,12 +9,11 @@ from routes import Trash
 
 app = Flask(__name__)
 
-CORS(app, resources={"*": {"origins": "http://localhost:9300"}})
+CORS(app, resources={"*": {"origins": "http://localhost:3000"}})
 
 
 def page_not_found(error):
     return "<h1>Not found page</h1>", 404
-
 
 if __name__ == '__main__':
     app.config.from_object(config['development'])

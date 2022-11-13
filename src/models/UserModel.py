@@ -24,12 +24,12 @@ class UserModel():
             raise Exception(ex)
 
     @classmethod
-    def get_user(self, id):
+    def get_user(self, id, password):
         try:
             connection = get_connection()
 
             with connection.cursor() as cursor:
-                cursor.execute("SELECT id, name, email FROM public.user WHERE id = %s", (id,))
+                cursor.execute("SELECT id, name, email FROM public.user WHERE email = %s and password = %s", (id,password))
                 row = cursor.fetchone()
 
                 user = None

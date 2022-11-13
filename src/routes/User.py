@@ -1,5 +1,9 @@
 from flask import Blueprint, jsonify, request
 import uuid
+import smtplib
+from email.message import EmailMessage
+import ssl
+from decouple import config
 
 # Entities
 from models.entities.User import User
@@ -18,10 +22,10 @@ def get_users():
         return jsonify({'message': str(ex)}), 500
 
 
-@main.route('/<id>')
-def get_user(id):
+@main.route('/<id>/<password>')
+def get_user(id,password):
     try:
-        user = UserModel.get_user(id)
+        user = UserModel.get_user(id,password)
         if user != None:
             return jsonify(user)
         else:
@@ -45,6 +49,40 @@ def add_user():
             return jsonify(user.id)
         else:
             return jsonify({'message': "Error on insert"}), 500
+
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500
+
+@main.route('/correo', methods=['POST'])
+def correo():
+    try:
+        description = str(request.json['description'])
+        latitude = str(request.json['latitude'])
+        longitude = str(request.json['longitude'])
+
+        print(description)
+        print(latitude)
+        print(longitude)
+        message = 'Hola este es un reporte de SNAPTRASH. \nLos datos son:\nDesrcipción: ' +description+'\nLatitude: '+latitude+'\nLongitude: '+longitude
+        message = str(message)
+
+        print(message)
+
+        remitente = 'jeanmarcopedraza@gmail.com'
+
+        em = EmailMessage()
+        em['From'] = 'alexispatinoagudelo@gmail.com'
+        em['To'] = remitente
+        em['Subject'] = 'Reporte SNAPTRASH'
+        em.set_content(message)
+
+        context = ssl.create_default_context()
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+            smtp.login('alexispatinoagudelo@gmail.com',config('PASSWORD'),)
+            smtp.sendmail('alexispatinoagudelo@gmail.com', remitente, em.as_string())
+
+        return jsonify('OK')
 
     except Exception as ex:
         return jsonify({'message': str(ex)}), 500

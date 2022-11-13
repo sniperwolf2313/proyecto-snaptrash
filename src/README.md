@@ -7,10 +7,12 @@ REST API con Python, Flask y PostgreSQL. Usaremos el protocolo HTTP junto con lo
 Primero, crear un entorno virtual:
 ### `python -m virtualenv env`
 
-## `.\venv\Scripts\activate`
+## `venv\Scripts\activate`
 
 Para instalar los paquetes necesarios:
 ### `pip install -r requirements.txt`
+
+## `python app.py`
 
 Crear un archivo .env (en la raíz del proyecto) para las variables de entorno:
 

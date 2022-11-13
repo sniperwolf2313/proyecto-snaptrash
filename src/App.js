@@ -8,6 +8,8 @@ import { FooterComponent } from './components/FooterComponent';
 import { SolicitudComponent } from './components/SolicitudComponent';
 import { MainComponent } from './components/MainComponent';
 
+import { ProfileComponent } from './components/ProfileComponent';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,8 @@ function App() {
             <Route exact path='/reporte' element={<SolicitudComponent/>}></Route>
             <Route exact path='/login' element={<LoginComponent/>}></Route>
             <Route exact path='/register' element={<RegisterComponent/>}></Route>
+
+            <Route exact path='/profile' element={<ProfileComponent/>}></Route>
           </Routes>
         </Router>
       </header>

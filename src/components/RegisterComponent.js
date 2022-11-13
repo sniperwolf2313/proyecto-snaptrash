@@ -1,6 +1,54 @@
-import React from 'react'
+import { React, useState } from 'react';
+import axios from 'axios';
 
 export const RegisterComponent = () => {
+    const [ post, setPost ] = useState();
+    const [values, setValues] = useState({
+        email: "",
+        name:"",
+        password: "",
+        password2: "",
+      });
+
+    const url = 'http://localhost:5000/api/user/add'
+
+    function handleSubmit(evt) {
+        evt.preventDefault();
+      }
+
+    function handleChange(evt) {
+        const { target } = evt;
+        const { name, value } = target;
+
+        const newValues = {
+        ...values,
+        [name]: value,
+        };
+
+        setValues(newValues)
+    }
+
+    const register = () => {
+        try {
+            if(values.password === values.password2){
+                axios.post(url, {
+                    email: values.email, 
+                    name: values.name, 
+                    password: values.password
+                })
+                .then( (response ) => {
+                    setPost(response.data)
+                    console.log(response.data);
+                    alert('Usuario registrado correctamente')
+                })
+            }else{
+                alert('La contraseña debe ser igual.')
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <div class="container w-75 bg-primary mt-5 rounded shadow">
             <div class="row align-items-stretch">
@@ -12,31 +60,29 @@ export const RegisterComponent = () => {
                         <div class="text-center">
                             <h2 class="fw-bold text-center py-5">Registro Nuevo Usuario</h2>
                         </div>
-                        <form action="/users/signup" class="row g-3" method="POST">
+                        <form onSubmit={handleSubmit} class="row g-3">
                             <div class="form-group mb-4 text-start">
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" name="nombre" required/>
-                                <label for="apellido" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" name="apellido" required/>
+                                <input type="text" class="form-control" name="name" required value={values.name} onChange={handleChange}/>
                                 <label for="email" class="form-label">Correo Electronico</label>
-                                <input type="email" class="form-control" name="email"/>
+                                <input type="email" class="form-control" name="email" required value={values.email} onChange={handleChange}/>
                                 <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" name="password" required/>
+                                <input type="password" class="form-control" name="password" required value={values.password} onChange={handleChange}/>
                                 <label for="password" class="form-label">Repetir Contraseña</label>
-                                <input type="password" class="form-control" name="password2-registro" required/>
+                                <input type="password" class="form-control" name="password2" required value={values.password2} onChange={handleChange}/>
                             </div>
 
                             <div class="form-group d-grid">
-                                <button type="submit" class="btn btn-primary">Registrarse</button>
+                                <button class="btn btn-primary" onClick={register}>Registrarse</button>
                             </div>
                         </form>
 
                         <div class="container w-100 my-5">
-                            <div class="row text-center">
+                            {/* <div class="row text-center">
                                 <div class="col-12"> Registrarse con</div>
                             </div>
-                        <br></br>
-                        <div class="row">
+                        <br></br> */}
+                        {/* <div class="row">
                             <div class="col">
                                 <button class="btn btn-outline-primary w-100 my-1">
                                     <div class="row align-items-center">
@@ -57,11 +103,10 @@ export const RegisterComponent = () => {
                                     </div>
                                 </button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
         </div>  
-
     )
 }
